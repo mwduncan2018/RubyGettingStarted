@@ -1,5 +1,8 @@
 module Foobar
 
+    class SpecialCharacterError < StandardError
+    end
+
     class Person
         #Adds getters and setters
         attr_accessor :first_name
@@ -8,16 +11,13 @@ module Foobar
         attr_accessor :salary
         attr_accessor :profession
 
-        #Adds a setter
-        attr_writer :special_character
-        
         def initialize(first_name, last_name, age, salary, profession)
             @first_name = first_name
             @last_name = last_name
             @age = age
             @salary = salary
             @profession = profession
-            self.special_character = "..."
+            @special_character = "..."
         end
 
         def pretty_print
@@ -32,6 +32,12 @@ module Foobar
             end
         end
 
+        def special_character(s)
+            if s == "!"
+                raise SpecialCharacterError ("Invalid special character: " + s.to_s)
+            end
+            @special_character = s.to_s
+        end
 
     end
 
