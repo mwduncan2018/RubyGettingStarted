@@ -1,15 +1,12 @@
 RSPEC is a Ruby Gem and the most popular Ruby test framework.
+    gem install rspec -v 3.5.0
+    rspec --version
 
-gem install rspec -v 3.5.0
-rspec --version
+To format the output of the test run in the console:
+    rspec --format doc --color
+
 By convention, RSPEC looks for a 'spec' folder.
-To format the output of the test run in the console: rspec --format doc --color
-
-'expect' is used instead of assertions
-    Equality
-    Comparison
-    Boolean
-    String
+'expect' is used instead of assertions -> search for "github RSPEC expectations"
 
 ========== Terminology Comparison ==========
 RSPEC           -vs-        Test::Unit
@@ -21,3 +18,10 @@ example                     test
 spec                        test
 test                        test
 
+Hooks
+    before(:example) do
+        #...
+    end
+    after(:example) do
+        #...
+    end

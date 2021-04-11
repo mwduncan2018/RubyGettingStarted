@@ -2,19 +2,6 @@ require "almond"
 
 RSpec.describe "Peanut Feature:" do
 
-    context "Given a person is created with a salary of 50000" do
-        person = Almond::Person.new("Sarah","F",24,50000,"Business Analyst")
-        it "Then the salary of the person should be within 5000 of 45000" do
-            expect(person.salary).to be_within(5000).of(45000)
-        end
-        it "And the salary of the person should be within 10000 of 60000" do
-            expect(person.salary).to be_within(10000).of(60000)
-        end
-        it "And the salary of the person should not be within 5000 of 44000" do
-            expect(person.salary).to_not be_within(5000).of(44000)
-        end
-    end
-
     context "Given a person is created with first name Michael and last name Duncan" do
         personMichael = Almond::Person.new("Michael", "Duncan", 39, 225000, "Principal Test Engineer")
         it "Then the full name of Michael should start with 'Mi' and end with 'can'" do
@@ -63,6 +50,19 @@ RSpec.describe "Peanut Feature:" do
         it "When the special character is set to '!', Then a SpecialCharacterError occurs" do
             expect { person.set_special_character_to("!") }.to raise_error(Almond::SpecialCharacterError)
         end    
+    end
+
+    context "Given a person is created with a salary of 50000" do
+        person = Almond::Person.new("Sarah","F",24,50000,"Business Analyst")
+        it "Then the salary of the person should be within 5000 of 45000" do
+            expect(person.salary).to be_within(5000).of(45000)
+        end
+        it "And the salary of the person should be within 10000 of 60000" do
+            expect(person.salary).to be_within(10000).of(60000)
+        end
+        it "And the salary of the person should not be within 5000 of 44000" do
+            expect(person.salary).to_not be_within(5000).of(44000)
+        end
     end
 
 end
