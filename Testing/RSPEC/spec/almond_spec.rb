@@ -16,7 +16,6 @@ RSpec.describe "Almond Feature:" do
 
     it "Given a person, when the special character is set to '!', then a SpecialCharacterError occurs" do
         person = Almond::Person.new("Gina","X",55,100000,"Test Engineer")
-        #expect { p.set_special_character_to("!") }
         expect { person.set_special_character_to("!") }.to raise_error(Almond::SpecialCharacterError)
     end
 
