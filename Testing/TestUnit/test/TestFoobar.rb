@@ -57,8 +57,8 @@ class TestFoobar < Test::Unit::TestCase
 
     def test_givenAPerson_whenTheSpecialCharacterIsSetToBang_thenASpecialCharacterErrorOccurs
         p = Foobar::Person.new("Jack","E",20,160000,"Mechanical Engineer")
-        assert_raise(SpecialCharacterError) {
-            p.special_character("!")
+        assert_raise(Foobar::SpecialCharacterError) {
+            p.set_special_character_to("!")
         }
     end
 

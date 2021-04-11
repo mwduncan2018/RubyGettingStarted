@@ -1,17 +1,16 @@
-module Foobar
-
+module Almond
+    
     class SpecialCharacterError < StandardError
     end
 
     class Person
-        #Adds getters and setters
         attr_accessor :first_name
         attr_accessor :last_name
         attr_accessor :age
         attr_accessor :salary
         attr_accessor :profession
 
-        def initialize(first_name, last_name, age, salary, profession)
+        def initialize first_name, last_name, age, salary, profession
             @first_name = first_name
             @last_name = last_name
             @age = age
@@ -32,9 +31,9 @@ module Foobar
             end
         end
 
-        def special_character(s)
+        def set_special_character_to s
             if s == "!"
-                raise SpecialCharacterError ("Invalid special character: " + s.to_s)
+                raise SpecialCharacterError.new "Invalid special character: " + s.to_s
             end
             @special_character = s.to_s
         end
