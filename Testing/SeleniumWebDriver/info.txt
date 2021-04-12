@@ -1,2 +1,13 @@
 gem install selenium-webdriver
 gem install ffi
+
+Chrome setup
+    Download the version of chromedriver that matches the version of Chrome
+    https://chromedriver.chromium.org/downloads
+
+Firefox setup
+
+
+PATH setup
+    Add the folder to the PATH environment variable
+    For example: C:\dev\WebDrivers\
